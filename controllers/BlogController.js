@@ -1,13 +1,12 @@
 import blogModel from "../models/BlogModel.js";
 
-//mostrar todos los registros
 export const getAllBlogs = async (req, res) => {
     try{
         const blogs = await blogModel.findAll()
         res.json(blogs)
     }
     catch(err){
-        res.json({message: error.message})
+        res.json({message: err.message})
     }
 }
 //mostrar un solo registro
@@ -22,7 +21,7 @@ export const getBlog = async (req, res) => {
         res.json(blog[0])
     }
     catch(err){
-        res.json({message: error.message})
+        res.json({message: err.message})
     }
 }
 
