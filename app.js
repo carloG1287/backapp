@@ -4,6 +4,7 @@ import db from './database/db.js';
 import blogModel from './models/BlogModel.js';
 import blogRouter from './routes/routesBlog.js';
 import itemRouter from './routes/routesItem.js';
+import 'dotenv/config'
 
 const app = express();
 
@@ -24,6 +25,6 @@ app.get('/', (req, res) => {
     res.send('Hello World');
 });
 
-app.listen(8000, () => {
+app.listen(process.env.PORT || 8000, () => {
     console.log('Server is running');
 });
